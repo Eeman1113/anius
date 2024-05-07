@@ -5,7 +5,7 @@ def main():
     st.title("Anime Video Player")
 
     # Step 1: Search for an anime
-    query_term = st.text_input("Search for an anime:", "Naruto")
+    query_term = st.text_input("Search for an anime:")
     if query_term:
         entry = anipy_cli.Entry()
         query_class = anipy_cli.query(query_term, entry)
