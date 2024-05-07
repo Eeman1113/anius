@@ -2,7 +2,7 @@ import anipy_cli
 import streamlit as st
 
 def main():
-    st.title("Ainus【アイヌス】")
+    st.title("Anius【アイヌス】")
 
     # Step 1: Search for an anime
     query_term = st.text_input("Search for an anime:")
