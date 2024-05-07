@@ -55,7 +55,7 @@ def main():
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
 
                 # Embed the iframe
-                iframe_html = f'<iframe src="{entry.embed_url"}" width="100%" height="400" frameborder="0" allowfullscreen></iframe>'
+                iframe_html = f'<iframe src="{entry.embed_url}" width="100%" height="400" frameborder="0" allowfullscreen></iframe>'
                 st.markdown(iframe_html, unsafe_allow_html=True)
 
         progress_bar.empty()
