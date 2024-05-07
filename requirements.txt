@@ -1,0 +1,2 @@
+anipy_cli==2.7.31
+streamlit==1.28.1
