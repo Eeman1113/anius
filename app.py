@@ -54,11 +54,6 @@ def main():
                 # Output the embed link
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
 
-                # Add download button
-                if st.button("Download Episode"):
-                    dl_class = anipy_cli.download(entry, "best")
-                    dl_class.download()
-                    st.balloons()
 
         progress_bar.empty()
 
