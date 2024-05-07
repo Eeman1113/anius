@@ -53,6 +53,7 @@ def main():
 
                 # Output the embed link
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
+                st.components.v1.iframe(f"{entry.embed_url}", height=400, scrolling=True)
 
 
         progress_bar.empty()
