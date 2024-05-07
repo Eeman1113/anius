@@ -10,6 +10,10 @@ def main():
 
     if query_term:
         entry = anipy_cli.Entry()
+
+        # Show progress bar
+        progress_bar = st.progress(0)
+
         query_class = anipy_cli.query(query_term, entry)
         links_and_names = query_class.get_links()
 
@@ -17,6 +21,9 @@ def main():
         search_results = []
         for link, name in zip(links_and_names[0], links_and_names[1]):
             search_results.append((name, f"https://gogoanime.gg{link}"))
+
+        # Update progress bar
+        progress_bar.progress(100)
 
         # Step 2: Select an anime from the search results
         selected_anime = st.selectbox("Select an anime: 📽️", options=[name for name, _ in search_results])
