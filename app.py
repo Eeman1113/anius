@@ -52,6 +52,7 @@ def main():
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
                 # Update progress bar
                 progress_bar.progress(100)
+                st.balloons()
 
 if __name__ == "__main__":
     main()
