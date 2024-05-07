@@ -22,8 +22,7 @@ def main():
         for link, name in zip(links_and_names[0], links_and_names[1]):
             search_results.append((name, f"https://gogoanime.gg{link}"))
 
-        # Update progress bar
-        progress_bar.progress(100)
+       
 
         # Step 2: Select an anime from the search results
         selected_anime = st.selectbox("Select an anime: 📽️", options=[name for name, _ in search_results])
@@ -51,6 +50,8 @@ def main():
 
                 # Output the embed link
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
+                # Update progress bar
+                progress_bar.progress(100)
 
 if __name__ == "__main__":
     main()
