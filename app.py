@@ -1,5 +1,6 @@
 import anipy_cli
 import streamlit as st
+import time
 
 def main():
     st.markdown("<h1 style='text-align: center; color: #ff6961;'>Anius【アイヌス】🎬</h1>", unsafe_allow_html=True)
@@ -12,7 +13,11 @@ def main():
         entry = anipy_cli.Entry()
 
         # Show progress bar
-        progress_bar = st.progress(0)
+        progress_text = "Searching for anime..."
+        progress_bar = st.progress(0, text=progress_text)
+        for percent_complete in range(100):
+            time.sleep(0.01)
+            progress_bar.progress(percent_complete + 1, text=progress_text)
 
         query_class = anipy_cli.query(query_term, entry)
         links_and_names = query_class.get_links()
@@ -21,8 +26,6 @@ def main():
         search_results = []
         for link, name in zip(links_and_names[0], links_and_names[1]):
             search_results.append((name, f"https://gogoanime.gg{link}"))
-
-       
 
         # Step 2: Select an anime from the search results
         selected_anime = st.selectbox("Select an anime: 📽️", options=[name for name, _ in search_results])
@@ -50,9 +53,14 @@ def main():
 
                 # Output the embed link
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
-                # Update progress bar
-                progress_bar.progress(100)
-                st.balloons()
+
+                # Add download button
+                if st.button("Download Episode"):
+                    dl_class = anipy_cli.download(entry, "best")
+                    dl_class.download()
+                    st.balloons()
+
+        progress_bar.empty()
 
 if __name__ == "__main__":
     main()
