@@ -41,7 +41,7 @@ def main():
                 entry = video_url_class.get_entry()
 
                 # Output the embed link
-                st.write(f"Embed Link: {entry.embed_url}")
+                st.write(f"Here You Go: {entry.embed_url}")
 
 if __name__ == "__main__":
     main()
