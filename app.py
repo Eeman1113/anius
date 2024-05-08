@@ -48,15 +48,16 @@ def main():
 
                 # Output the embed link
                 st.success(f"Here You Go: 🎥 {entry.embed_url}")
+                
 
-                # Add a download button
-                if st.button("Download 📥"):
-                    temp_dir = tempfile.TemporaryDirectory()
-                    dl_path = Path(temp_dir.name)
-                    dl_class = anipy_cli.download(entry, "best")
-                    dl_class.dl_path = dl_path
-                    dl_class.download()
-                    temp_dir.cleanup()
+                # # Add a download button
+                # if st.button("Download 📥"):
+                #     temp_dir = tempfile.TemporaryDirectory()
+                #     dl_path = Path(temp_dir.name)
+                #     dl_class = anipy_cli.download(entry, "best")
+                #     dl_class.dl_path = dl_path
+                #     dl_class.download()
+                #     temp_dir.cleanup()
 
 if __name__ == "__main__":
     main()
