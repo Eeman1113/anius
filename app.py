@@ -1,5 +1,7 @@
 import anipy_cli
 import streamlit as st
+import tempfile
+from pathlib import Path
 
 def main():
     st.markdown("<h1 style='text-align: center; color: #ff6961;'>Anius【アイヌス】🎬</h1>", unsafe_allow_html=True)
@@ -49,8 +51,12 @@ def main():
 
                 # Add a download button
                 if st.button("Download 📥"):
+                    temp_dir = tempfile.TemporaryDirectory()
+                    dl_path = Path(temp_dir.name)
                     dl_class = anipy_cli.download(entry, "best")
+                    dl_class.dl_path = dl_path
                     dl_class.download()
+                    temp_dir.cleanup()
 
 if __name__ == "__main__":
     main()
