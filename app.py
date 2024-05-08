@@ -46,18 +46,9 @@ def main():
                 video_url_class.stream_url()
                 entry = video_url_class.get_entry()
 
-                # Output the embed link
-                st.success(f"Here You Go: 🎥 {entry.embed_url}")
-                
-
-                # # Add a download button
-                # if st.button("Download 📥"):
-                #     temp_dir = tempfile.TemporaryDirectory()
-                #     dl_path = Path(temp_dir.name)
-                #     dl_class = anipy_cli.download(entry, "best")
-                #     dl_class.dl_path = dl_path
-                #     dl_class.download()
-                #     temp_dir.cleanup()
+                # Play the video in Streamlit
+                video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
+                st.markdown(video_html, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
