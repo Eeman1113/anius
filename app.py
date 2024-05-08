@@ -46,6 +46,9 @@ def main():
                 video_url_class.stream_url()
                 entry = video_url_class.get_entry()
 
+                # Output the embed link
+                st.success(f"Embed Link: 🎥 {entry.embed_url}")
+
                 # Play the video in Streamlit
                 video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
                 st.markdown(video_html, unsafe_allow_html=True)
