@@ -54,7 +54,7 @@ def main():
                 # st.markdown(video_html, unsafe_allow_html=True)
                 from streamlit_player import st_player
                 # Embed a youtube video
-                st_player(f"{entry.stream_url}")
+                st_player(f"{entry.embed_url}")
 
 
 
