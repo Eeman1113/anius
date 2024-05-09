@@ -45,6 +45,7 @@ def main():
                 video_url_class = anipy_cli.videourl(entry, "best")
                 video_url_class.stream_url()
                 entry = video_url_class.get_entry()
+                #output is: Entry(show_name='', category_url='https://gogoanime.gg/category/naruto-shippuuden-movie-2-kizuna', ep_url='https://gogoanime3.co//naruto-shippuuden-movie-2-kizuna-episode-1', embed_url='https://embtaku.pro/streaming.php?id=NDA1ODg=&title=Naruto+Shippuuden+Movie+2%3A+Kizuna+Episode+1&typesub=SUB', stream_url='https://www049.vipanicdn.net/streamhls/7a5f81683439c04fa17f5250c3c5438f/ep.1.1709241222.m3u8', ep=1, latest_ep=1, quality='hls')
 
                 # Output the embed link
                 st.success(f"Embed Link: 🎥 {entry.embed_url}")
