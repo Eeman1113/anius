@@ -50,8 +50,13 @@ def main():
                 st.success(f"Embed Link: 🎥 {entry.embed_url}")
 
                 # Play the video in Streamlit
-                video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
-                st.markdown(video_html, unsafe_allow_html=True)
+                # video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
+                # st.markdown(video_html, unsafe_allow_html=True)
+                from streamlit_player import st_player
+                # Embed a youtube video
+                st_player(f"{entry.stream_url}")
+
+
 
 if __name__ == "__main__":
     main()
