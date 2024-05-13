@@ -50,13 +50,13 @@ def main():
                 # Output the embed link
                 st.success(f"Embed Link: 🎥 {entry.embed_url}")
 
-                st.video(f"{entry.stream_url}")
+                # st.video(f"{entry.stream_url}")
 
                 # Play the video in Streamlit
                 # video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
                 # st.markdown(video_html, unsafe_allow_html=True)
-                # from streamlit_player import st_player
-                # st_player(f"{entry.stream_url}")
+                from streamlit_player import st_player
+                st_player(f"{entry.stream_url}")
 
 
 
