@@ -50,7 +50,7 @@ def main():
                 # Output the embed link
                 st.success(f"Embed Link: 🎥 {entry.embed_url}")
 
-                st.video(f"{entry.stream_url}",autoplay=False)
+                st.video(f"{entry.stream_url}")
 
                 # Play the video in Streamlit
                 # video_html = f'<video width="100%" height="auto" controls><source src="{entry.stream_url}" type="video/mp4"></video>'
