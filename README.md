@@ -1,4 +1,4 @@
-Sure, here's a fun and cute README.md for the "_anius_" project:
+
 
 # _anius_ 【アイヌス】🎬
 
